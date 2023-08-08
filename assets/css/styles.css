@@ -1,10 +1,12 @@
 /* General Resets & Styling */
+
 * {
   margin: 0;
   padding: 0;
   border: none;
   box-sizing: border-box;
 }
+
 body {
   font-family: "Arial", sans-serif;
   background-color: #c5f8fc;
@@ -13,48 +15,64 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding-bottom: 10px;
 }
+
 div {
   width: 100%;
   max-width: 600px;
   padding: 10px;
   box-sizing: border-box;
 }
+
 #header {
-  background-color: #08dbe2;
-  color: #b3510f;
+  background-color: #016e72;
+  color: #fa802f;
   text-align: center;
-  font-size: 1em;
+  font-size: 0.9em;
   font-weight: bold;
 }
+
 /* Dealer Area */
+
 #dealer {
   background-color: #ccf87c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
   padding: 40px 20px;
 }
+
 #dealer-choice {
   width: 40%;
   opacity: 0.5;
   background-color: #b6b150;
 }
+
 /* Message Area */
+
 #message {
   background-color: #f5f3c9;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
 }
+
 /* Betting Area */
+
 #betting {
   text-align: center;
   margin-bottom: 20px;
 }
+
 #bet-placement {
   font-size: 1.3em;
   font-weight: bold;
   margin-bottom: 20px;
 }
+
 .chip {
   display: flex;
   justify-content: center; /* align horizontally */
@@ -72,17 +90,21 @@ div {
 #chips-selector {
   display: flex;
   justify-content: center;
-}
+
 .chip-1 {
   background-color: rgb(231, 228, 228);
 }
+
 .chip-10 {
   background-color: #ffaaaa;
 }
+
 .chip-100 {
   background-color: #a7a7fa;
 }
+
 /* Player Choice Area */
+
 #player-choice {
   background-color: #a1f8db;
   text-align: center;
@@ -91,12 +113,28 @@ div {
   flex-wrap: wrap;
   justify-content: center;
 }
+
 .choice {
   flex: 1 0 calc(50% - 10px); /* Detailed explanation of this style is in the README.md */
   background-color: #cbe2fb;
   color: #000000;
 }
+
 .choice:hover {
   background-color: #3295ff;
 }
+/* Footer */
+footer {
+  background-color: #016e72;
+  color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  font-size: 0.5em;
+  text-align: center;
+  padding: 1px 0;
+}
+
 /* media queries for larger screens */
