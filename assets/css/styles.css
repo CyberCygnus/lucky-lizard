@@ -50,52 +50,21 @@ div {
   font-size: 1.5em;
   font-weight: bold;
 }
-/* Betting Area */
-#betting {
+/* Player Area */
+#player-score {
   text-align: center;
   margin-bottom: 10px;
 }
-#bet-placement {
-  font-size: 1.3em;
-  font-weight: bold;
-  margin-bottom: 20px;
-}
-.chip {
+#player-choice-container {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border-width: 10px;
-  border-color: #083929;
-  margin: 0 10px;
-  color: #000000;
-  font-weight: bold;
-  cursor: pointer;
-  box-shadow: 0px 6px 8px rgba(6, 57, 40, 0.7);
 }
-#chips-selector {
-  display: flex;
-  justify-content: center;
-}
-.chip-1 {
-  background-color: #e7e4e4;
-}
-.chip-10 {
-  background-color: #ffaaaa;
-}
-.chip-100 {
-  background-color: #a7a7fa;
-}
-/* Player Choice Area */
 #player-choice {
-  background-color: #96e2c9;
-  padding: 10px;
   display: flex;
-  flex-wrap: wrap;
   justify-content: space-between;
-  align-items: center;
+  width: 100%;
+  max-width: 600px;
 }
 .choice {
   flex: 0 1 calc(20% - 10px); /* Detailed explanation of this style is in the README.md */
