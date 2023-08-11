@@ -7,7 +7,7 @@
 }
 body {
   font-family: "Arial", sans-serif;
-  background-color: #96e2c9;
+  background-color: #228b74;
   margin: 0;
   padding: 0;
   display: flex;
@@ -22,7 +22,7 @@ div {
   box-sizing: border-box;
 }
 #header {
-  background-color: #016e72;
+  background-color: #014143;
   color: #fa802f;
   text-align: center;
   font-size: 0.9em;
@@ -30,7 +30,7 @@ div {
 }
 /* Dealer Area */
 .dealer {
-  background-color: rgb(150, 226, 201);
+  background-color: #228b74;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -58,10 +58,11 @@ div {
 }
 /* Message Area */
 #message {
-  background-color: #f5f3c9;
+  background-color: #014143;
   text-align: center;
   font-size: 1.5em;
   font-weight: bold;
+  color: #02eef6;
 }
 /* Player Area */
 #player-score {
@@ -114,5 +115,5 @@ footer {
   text-align: center;
   margin-top: 10px;
   font-size: 0.8em;
-  color: #4a4a4a;
+  color: #014143;
 }
