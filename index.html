@@ -15,31 +15,30 @@
         <p>Rock, Paper, Scissors, Lizard, Spock</p>
     </div>
     <!-- Dealer -->
-    <div id="dealer">
-        <div id="dealer-choice">
-            <img src="path-to-dealer-choice-image" alt="Dealer's Choice">
+    <div class="dealer">
+        <div class="dealer-choice">
+            <img src="#" alt="Dealer's Choice" />
         </div>
         <div id="dealer-score">
-            Dealer Score: <span id="dealer-score-value">0</span>
+            <h3>Dealer Score: <span id="dealer-score-value">0</span></h3>
         </div>
     </div>
     <!-- Message -->
     <div id="message">
-        <p id="result-message">you win</p>
+        <p id="result-message">Make a choice!</p>
     </div>
     <!-- Player -->
-
     <div id="player-score">
-        Player Score: <span id="player-score">0</span>
+        <h3>Your Score: <span id="player-score-value">0</span></h3>
     </div>
     <!-- Player-choice -->
-    <div id="player-choice-container">
-        <div id="player-choice">
-            <button class="choice" data-choice="rock">🪨</button>
-            <button class="choice" data-choice="paper">📃</button>
-            <button class="choice" data-choice="scissors">✂️</button>
-            <button class="choice" data-choice="lizard">🦎</button>
-            <button class="choice" data-choice="spock">🖖</button>
+    <div class="player-choice-container">
+        <div class="player-choice">
+            <button aria-label="Rock" class="choice" data-choice="0">🪨</button>
+            <button aria-label="Paper" class="choice" data-choice="1">📃</button>
+            <button aria-label="Scissors" class="choice" data-choice="2">✂️</button>
+            <button aria-label="Lizard" class="choice" data-choice="3">🦎</button>
+            <button aria-label="Spock" class="choice" data-choice="4">🖖</button>
         </div>
     </div>
     <!-- Footer -->
