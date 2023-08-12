@@ -41,7 +41,32 @@ function determineWinner(player, dealer) {
 /**
  * calculates the winner, updates scores, and displays results.
  */
-// function playGame(playerChoice) {}
+function playGame(playerChoice) {
+  const dealer = dealerChoice();
+  const winner = determineWinner(playerChoice, dealer);
+
+  const messageElement = document.getElementById("result-message");
+  const playerScoreElement = document.getElementById("player-score-value");
+  const dealerScoreElement = document.getElementById("dealer-score-value");
+  const dealerChoiceDisplay = document.getElementById("dealer-choice");
+
+  switch (winner) {
+    case "player":
+      playerScore++;
+      messageElement.innerText = "You win!";
+      playerScoreElement.innerText = playerScore;
+      break;
+    case "dealer":
+      dealerScore++;
+      messageElement.innerText = "Dealer wins!";
+      dealerScoreElement.innerText = dealerScore;
+      break;
+    default:
+      messageElement.innerText = "It's a draw!";
+  }
+
+  dealerChoiceDisplay.innerHTML = dealer;
+}
 
 // event listeners
 
