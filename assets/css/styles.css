@@ -94,20 +94,20 @@ div {
 .choice:hover {
   background-color: #3295ff;
 }
-.choice[data-choice="0"] {
+.choice[data-choice="rock"] {
   background-color: #343333;
 }
-.choice[data-choice="1"] {
+.choice[data-choice="paper"] {
   background-color: #08607d;
 }
 
-.choice[data-choice="2"] {
+.choice[data-choice="scissors"] {
   background-color: #901002;
 }
-.choice[data-choice="3"] {
+.choice[data-choice="lizard"] {
   background-color: #116351;
 }
-.choice[data-choice="4"] {
+.choice[data-choice="spock"] {
   background-color: #7d7507;
 }
 /* Footer */
