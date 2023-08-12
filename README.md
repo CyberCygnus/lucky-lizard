@@ -1,5 +1,26 @@
 # Lucky Lizard
 
+The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissors game, with the addition of two more choices: Lizard and Spock (represented by emojis).
+
+- [Lucky Lizard](#lucky-lizard)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+    - [Features Left to Implement](#features-left-to-implement)
+  - [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+    - [Unfixed Bugs](#unfixed-bugs)
+  - [Deployment](#deployment)
+  - [Code Explanations](#code-explanations)
+    - [CSS Flex Property in `.choice`](#css-flex-property-in-choice)
+    - [JavaScript](#javascript)
+      - [`dealerChoice()`](#dealerchoice)
+      - [`determineWinner(player, dealer)`](#determinewinnerplayer-dealer)
+      - [`playGame(playerChoice)`](#playgameplayerchoice)
+      - [Event Handlers](#event-handlers)
+  - [Credits](#credits)
+    - [Content](#content)
+    - [Media](#media)
+
 ## Features
 
 ### Existing Features
@@ -35,6 +56,52 @@ In `style.css`, `flex: 0 1 calc(20% - 10px);` is used in the `.choice` class. Th
 
 - `flex-basis: calc(20% - 10px);` - This sets the initial main size of the item before it's distributed space according to the flex factors (`flex-grow` and `flex-shrink`). `calc(20% - 10px)` is used to calculate the width of each item. It's set to 20% of the container's width minus 10px for the margin around items.
   Source: [Using CSS flexible boxes - CSS: Cascading Style Sheets | MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Flexible_Box_Layout/Using_CSS_flexible_boxes)
+
+### JavaScript
+
+The script uses a set of global variables to manage the game state:
+
+- `gameRules`: An object that maps each choice to an array of choices it can defeat.
+- `playerScore` and `dealerScore`: Counters for the player's and dealer's scores.
+
+#### `dealerChoice()`
+
+**Purpose:**  
+Generates a random choice for the dealer among the available game symbols.
+
+**Returns:**  
+A string representing the dealer's choice.
+
+**Implementation:**  
+The function selects a random choice from the `choices` array using a combination of `Math.random()` and array indexing.
+
+#### `determineWinner(player, dealer)`
+
+**Purpose:**  
+Compares the player's and dealer's choices to decide the round's outcome.
+
+**Parameters:**
+
+**Returns:**
+
+**Implementation:**
+
+#### `playGame(playerChoice)`
+
+**Purpose:**  
+Executes the main game logic. This includes determining the winner, updating scores, and reflecting the results in the UI.
+
+**Parameters:**
+
+**Implementation:**
+
+#### Event Handlers
+
+**Purpose:**  
+Bind user interactions with the game symbols to trigger game rounds.
+
+**Implementation:**  
+For each choice symbol (button) with the class `.choice`, a click event listener is attached. Upon a click, the chosen symbol is passed to the `playGame()` function, initiating a game round.
 
 ## Credits
 
