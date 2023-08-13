@@ -20,8 +20,9 @@ The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissor
       - [`determineWinner(player, dealer)`](#determinewinnerplayer-dealer)
       - [`playGame(playerChoice)`](#playgameplayerchoice)
       - [Introduced `gameInProgress` state variable.](#introduced-gameinprogress-state-variable)
+      - [End of Game Logic \& UI](#end-of-game-logic--ui)
+      - [Introduced game reset functionality.](#introduced-game-reset-functionality)
       - [Event Handlers](#event-handlers)
-      - [](#)
   - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
@@ -98,14 +99,20 @@ Executes the main game logic. This includes determining the winner, updating sco
 - A state variable, `gameInProgress`, has been added to track if a game round is currently ongoing. This prevents new rounds from starting while one is already in progress, ensuring game integrity.
 - The `playGame` function now checks if a game round is in progress before initiating a new one. This ensures that players can't trigger multiple game rounds by clicking rapidly.
 
+#### End of Game Logic & UI
+
+- Added a new function, `endGame`, that handles the end of the game scenario. When a player or dealer reaches a score of 10, the game ends, and appropriate options are presented, such as starting a new game or exiting.
+
+#### Introduced game reset functionality.
+
+- Introduced the `resetGame` function which resets the game to its initial state, setting scores to zero and prompting players to make their next choice.
+
 #### Event Handlers
 
 Bind user interactions with the game symbols to trigger game rounds.
 
 **Implementation:**  
 For each choice symbol (button) with the class `.choice`, a click event listener is attached. Upon a click, the chosen symbol is passed to the `playGame()` function, initiating a game round.
-
-####
 
 ## Credits
 
