@@ -47,7 +47,7 @@ function playGame(playerChoice) {
   const dealerChoiceSymbol = document.getElementById("dealer-choice-symbol");
 
   dealerChoiceSymbol.innerText = dealer; // Show dealer's choice
-  dealerChoiceSymbol.style.fontSize = "4em"; // Make the dealer's choice symbol four times bigger
+  // dealerChoiceSymbol.style.fontSize = "4em"; // Make the dealer's choice symbol four times bigger
 
   // Change background color of dealer-choice-symbol div based on dealer's choice
   switch (dealer) {

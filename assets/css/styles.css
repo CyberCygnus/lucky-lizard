@@ -46,23 +46,44 @@ div {
 }
 .dealer-choice {
   display: flex;
+  position: relative;
   justify-content: center;
   align-items: center;
-  width: 128px;
-  height: 128px;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
   overflow: hidden;
-  font-size: 2em;
+  font-size: 1em;
 }
 .dealer-choice img {
-  width: 100%;
+  width: 115%; /* Adjusted from 100% to match circle size */
   height: auto;
   object-fit: cover;
+  z-index: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#dealer-choice-symbol {
+  z-index: 1;
+  width: 220px;
+  height: 220px;
+  border-radius: 50%; /* Circle shape */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 5em;
+  text-align: center;
+  line-height: 128px; /* For vertically aligning the emoji in the middle */
 }
 /* Once the dealer reveals their choice, add a class 'revealed' to the dealer-choice div to show the image */
 .dealer-choice.revealed img {
   display: block;
   opacity: 1; /* Fully visible */
 }
+/*
 /* Message Area */
 #message {
   background-color: #014143;
@@ -112,7 +133,6 @@ div {
 .choice[data-choice="paper"] {
   background-color: #08607d;
 }
-
 .choice[data-choice="scissors"] {
   background-color: #901002;
 }
