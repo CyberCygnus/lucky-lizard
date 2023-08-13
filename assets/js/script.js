@@ -98,6 +98,7 @@ function playGame(playerChoice) {
 }
 
 function endGame(winner) {
+  gameInProgress = true; // Set this flag to true to lock out input.
   const messageElement = document.getElementById("result-message");
   messageElement.innerHTML = `${winner} wins the game! <br>  
   <button id="exit">Exit</button> <button id="new-game">New Game</button>`;
@@ -114,12 +115,21 @@ function endGame(winner) {
 }
 
 function resetGame() {
+  gameInProgress = false; // Reset this flag to allow game actions.
+
   playerScore = 0;
   dealerScore = 0;
+
   const playerScoreElement = document.getElementById("player-score-value");
   const dealerScoreElement = document.getElementById("dealer-score-value");
+  const dealerChoiceSymbol = document.getElementById("dealer-choice-symbol"); // Get reference to dealer choice symbol
+
   playerScoreElement.innerText = playerScore;
   dealerScoreElement.innerText = dealerScore;
+
+  dealerChoiceSymbol.innerText = ""; // Clear the dealer's choice symbol
+  dealerChoiceSymbol.style.backgroundColor = "transparent"; // Reset background color
+
   document.getElementById("result-message").innerText = "Make your choice!";
 }
 
