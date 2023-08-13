@@ -9,7 +9,7 @@ const gameRules = {
 
 let playerScore = 0;
 let dealerScore = 0;
-
+let gameInProgress = false;
 // functions
 
 /**
@@ -42,6 +42,8 @@ function determineWinner(player, dealer) {
  * calculates the winner, updates scores, and displays results.
  */
 function playGame(playerChoice) {
+  if (gameInProgress) return; // <-- prevent new rounds while one is ongoing
+  gameInProgress = true; // <-- Mark the start of a game round
   const dealer = dealerChoice();
   const winner = determineWinner(playerChoice, dealer);
 

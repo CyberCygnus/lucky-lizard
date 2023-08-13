@@ -16,7 +16,9 @@ The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissor
       - [`dealerChoice()`](#dealerchoice)
       - [`determineWinner(player, dealer)`](#determinewinnerplayer-dealer)
       - [`playGame(playerChoice)`](#playgameplayerchoice)
+      - [Introduced `gameInProgress` state variable.](#introduced-gameinprogress-state-variable)
       - [Event Handlers](#event-handlers)
+      - [](#)
   - [Credits](#credits)
     - [Content](#content)
     - [Media](#media)
@@ -66,42 +68,29 @@ The script uses a set of global variables to manage the game state:
 
 #### `dealerChoice()`
 
-**Purpose:**  
 Generates a random choice for the dealer among the available game symbols.
-
-**Returns:**  
-A string representing the dealer's choice.
-
-**Implementation:**  
-The function selects a random choice from the `choices` array using a combination of `Math.random()` and array indexing.
 
 #### `determineWinner(player, dealer)`
 
-**Purpose:**  
 Compares the player's and dealer's choices to decide the round's outcome.
-
-**Parameters:**
-
-**Returns:**
-
-**Implementation:**
 
 #### `playGame(playerChoice)`
 
-**Purpose:**  
 Executes the main game logic. This includes determining the winner, updating scores, and reflecting the results in the UI.
 
-**Parameters:**
+#### Introduced `gameInProgress` state variable.
 
-**Implementation:**
+- A state variable, `gameInProgress`, has been added to track if a game round is currently ongoing. This prevents new rounds from starting while one is already in progress, ensuring game integrity.
+- The `playGame` function now checks if a game round is in progress before initiating a new one. This ensures that players can't trigger multiple game rounds by clicking rapidly.
 
 #### Event Handlers
 
-**Purpose:**  
 Bind user interactions with the game symbols to trigger game rounds.
 
 **Implementation:**  
 For each choice symbol (button) with the class `.choice`, a click event listener is attached. Upon a click, the chosen symbol is passed to the `playGame()` function, initiating a game round.
+
+####
 
 ## Credits
 
