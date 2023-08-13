@@ -50,7 +50,29 @@ function playGame(playerChoice) {
   const messageElement = document.getElementById("result-message");
   const playerScoreElement = document.getElementById("player-score-value");
   const dealerScoreElement = document.getElementById("dealer-score-value");
-  const dealerChoiceDisplay = document.getElementById("dealer-choice");
+  const dealerChoiceDisplay = document.getElementById("dealer-choice-symbol");
+
+  dealerChoiceSymbol.innerText = dealer; // Show dealer's choice
+  dealerChoiceSymbol.style.fontSize = "4em"; // Make the dealer's choice symbol four times bigger
+
+  // Change background color of dealer-choice-symbol div based on dealer's choice
+  switch (dealer) {
+    case "🪨":
+      dealerChoiceSymbol.style.backgroundColor = "#343333";
+      break;
+    case "📃":
+      dealerChoiceSymbol.style.backgroundColor = "#08607d";
+      break;
+    case "✂️":
+      dealerChoiceSymbol.style.backgroundColor = "#901002";
+      break;
+    case "🦎":
+      dealerChoiceSymbol.style.backgroundColor = "#116351";
+      break;
+    case "🖖":
+      dealerChoiceSymbol.style.backgroundColor = "#7d7507";
+      break;
+  }
 
   switch (winner) {
     case "player":
