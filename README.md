@@ -6,8 +6,8 @@ The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissor
   - [Features](#features)
     - [Existing Features](#existing-features)
     - [Logo](#logo)
-    - [Message field](#message-field)
     - [Dealer's choice](#dealers-choice)
+    - [Message field](#message-field)
     - [Features Left to Implement](#features-left-to-implement)
   - [Testing](#testing)
     - [Validator Testing](#validator-testing)
@@ -34,13 +34,13 @@ The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissor
 
 A friendly smiling cartoon lizard
 
-### Message field
-
-Textual feedback to the player.
-
 ### Dealer's choice
 
 Based on the dealer's choice of symbol, the background color changes accordingly. This provides an additional visual cue for players to recognize the dealer's choice quickly.
+
+### Message field
+
+Textual feedback to the player.
 
 ### Features Left to Implement
 
