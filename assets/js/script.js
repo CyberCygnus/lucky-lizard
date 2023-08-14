@@ -9,6 +9,7 @@ const gameRules = {
 let playerScore = 0;
 let dealerScore = 0;
 let gameInProgress = false;
+
 // Functions
 /**
    Generates a random choice for the dealer among the available game symbols.
@@ -19,6 +20,7 @@ function dealerChoice() {
   let randomIndex = Math.floor(Math.random() * choices.length);
   return choices[randomIndex];
 }
+
 // game logic
 /**
  * Determines the winner of the game round based on player and dealer choices.
@@ -33,7 +35,9 @@ function determineWinner(player, dealer) {
     return "dealer";
   }
 }
+
 /**
+ * playGame
  * calculates the winner, updates scores, and displays results.
  */
 function playGame(playerChoice) {
@@ -82,6 +86,7 @@ function playGame(playerChoice) {
       messageElement.innerText = "It's a draw!";
       break;
   }
+
   setTimeout(() => {
     gameInProgress = false; // <-- Mark the end of a game round
     if (playerScore >= 10) {
@@ -95,7 +100,9 @@ function playGame(playerChoice) {
     }
   }, 1000);
 }
+
 /**
+ * endGame
  * Concludes the current game round and displays the overall game winner.
  * Once a player or the dealer reaches a score threshold (e.g., 10 points),
  * the game is considered over. This function updates the game message to
@@ -117,7 +124,9 @@ function endGame(winner) {
     resetGame();
   });
 }
+
 /**
+ * resetGame
  * Resets the game state to its initial configuration.
  * Sets both the player's and dealer's scores back to zero,
  * updates the displayed score values, and resets the game message
@@ -142,6 +151,26 @@ function resetGame() {
 
   document.getElementById("result-message").innerText = "Make your choice!";
 }
+
+/* Modal */
+var modal = document.getElementById("myModal"); // Get the modal
+var btn = document.getElementById("fixedButton"); // Get the button that opens the modal
+var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
+// When the user clicks on the button, open the modal
+btn.onclick = function () {
+  modal.style.display = "block";
+};
+// When the user clicks on <span> (x), close the modal
+span.onclick = function () {
+  modal.style.display = "none";
+};
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+};
+
 // Event Listener
 document.querySelectorAll(".choice").forEach(function (button) {
   button.addEventListener("click", function (event) {

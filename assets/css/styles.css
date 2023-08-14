@@ -8,8 +8,6 @@
 body {
   font-family: "Arial", sans-serif;
   background-color: #228b74;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -19,14 +17,25 @@ div {
   width: 100%;
   max-width: 600px;
   padding: 5px;
-  box-sizing: border-box;
 }
 #header {
+  padding: 10px 20px;
+  position: relative;
   background-color: #014143;
   color: #fa802f;
   text-align: center;
   font-size: 0.9em;
   font-weight: bold;
+}
+/* Modal */
+.graph-placeholder img {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+.lorem-content {
+  padding: 20px;
+  text-align: justify;
 }
 /* Dealer Area */
 .dealer {
@@ -34,7 +43,6 @@ div {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   text-align: center;
   padding: 10px 20px;
 }
@@ -49,14 +57,14 @@ div {
   position: relative;
   justify-content: center;
   align-items: center;
+  border-radius: 50%;
   width: 220px;
   height: 220px;
-  border-radius: 50%;
   overflow: hidden;
-  font-size: 1em;
+  font-size: 6em;
 }
 .dealer-choice img {
-  width: 115%; /* Adjusted from 100% to match circle size */
+  width: 115%;
   height: auto;
   object-fit: cover;
   z-index: 0;
@@ -71,23 +79,18 @@ div {
 }
 #dealer-choice-symbol {
   z-index: 1;
-  width: 220px;
-  height: 220px;
-  border-radius: 50%; /* Circle shape */
+  width: 246px;
+  height: 246px;
+  border-radius: 50%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 5em;
+  font-size: 1em;
   text-align: center;
-  line-height: 128px; /* For vertically aligning the emoji in the middle */
+  line-height: 128px;
 }
-/* Once the dealer reveals their choice, add a class 'revealed' to the dealer-choice div to show the image */
-.dealer-choice.revealed img {
-  display: block;
-  opacity: 1; /* Fully visible */
-}
-/*
+
 /* Message Area */
 #message {
   background-color: #014143;
@@ -101,6 +104,7 @@ div {
   padding: 5px 10px;
   cursor: pointer;
 }
+
 /* Player Area */
 #player-score {
   text-align: center;
@@ -128,9 +132,6 @@ div {
   border-radius: 5px;
   text-align: center;
 }
-.choice:hover {
-  background-color: #3295ff;
-}
 .choice[data-choice="rock"] {
   background-color: #343333;
 }
@@ -146,6 +147,50 @@ div {
 .choice[data-choice="spock"] {
   background-color: #7d7507;
 }
+
+/* Modal */
+#fixedButton {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  padding: 10px 20px;
+  background-color: #228b74;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  z-index: 1000;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+.modal-content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: black;
+  cursor: pointer;
+}
+
 /* Footer */
 footer {
   text-align: center;
