@@ -27,16 +27,7 @@ div {
   font-size: 0.9em;
   font-weight: bold;
 }
-/* Modal */
-.graph-placeholder img {
-  width: 100%;
-  max-width: 300px;
-  margin: 20px auto;
-}
-.lorem-content {
-  padding: 20px;
-  text-align: justify;
-}
+
 /* Dealer Area */
 .dealer {
   background-color: #228b74;
@@ -159,7 +150,7 @@ div {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 1000;
+  z-index: 10;
 }
 .modal {
   display: none;
@@ -172,13 +163,12 @@ div {
   overflow: auto;
   right: 0;
   bottom: 0;
-  width: 80%;
   max-width: 600px;
   margin: auto;
   background-color: rgba(0, 0, 0, 0.4);
 }
 .modal-content {
-  background-color: #fefefe;
+  background-color: #caddb2;
   margin: 15% auto;
   padding: 20px;
   border: 1px solid #888;
@@ -195,11 +185,27 @@ div {
   color: black;
   cursor: pointer;
 }
-
+/* Modal Content*/
+.graph-placeholder img {
+  width: 100%;
+  max-width: 300px;
+  margin: 20px auto;
+}
+.lorem-content {
+  padding: 20px;
+  text-align: justify;
+}
 /* Footer */
 footer {
   text-align: center;
   margin-top: 10px;
   font-size: 0.8em;
   color: #014143;
+}
+
+/* Media query for screens wider than 590px */
+@media (min-width: 600px) {
+  #fixedButton {
+    right: calc((100% - 590px) / 2);
+  }
 }
