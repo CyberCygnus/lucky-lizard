@@ -12,6 +12,18 @@ let gameInProgress = false;
 const detailedMessageElement = document.getElementById(
   "detailed-result-message"
 );
+const outcomes = {
+  "🪨✂️": { action: "crushes", defeated: "✂️Scissors" },
+  "✂️📃": { action: "cuts", defeated: "📃Paper" },
+  "📃🪨": { action: "covers", defeated: "🪨Rock" },
+  "🪨🦎": { action: "crushes", defeated: "🦎Lizard" },
+  "🦎🖖": { action: "poisons", defeated: "🖖Spock" },
+  "🖖✂️": { action: "smashes", defeated: "✂️Scissors" },
+  "✂️🦎": { action: "decapitates", defeated: "🦎Lizard" },
+  "🦎📃": { action: "eats", defeated: "📃Paper" },
+  "📃🖖": { action: "disproves", defeated: "🖖Spock" },
+  "🖖🪨": { action: "vaporizes", defeated: "🪨Rock" },
+};
 
 /**
    Generates a random choice for the dealer among the available game symbols.
@@ -80,11 +92,11 @@ function playGame(playerChoice) {
   };
 
   if (winner === "player") {
-    detailedMessageElement.innerText = `${playerChoice} ${symbolNames[playerChoice]} beats ${dealer} ${symbolNames[dealer]}`;
+    let outcome = outcomes[playerChoice + dealer];
+    detailedMessageElement.innerText = `${playerChoice}${symbolNames[playerChoice]} ${outcome.action} ${outcome.defeated}`;
   } else if (winner === "dealer") {
-    detailedMessageElement.innerText = `${dealer} ${symbolNames[dealer]} beats ${playerChoice} ${symbolNames[playerChoice]}`;
-  } else {
-    detailedMessageElement.innerText = ""; // Clear the detailed message on a draw
+    let outcome = outcomes[dealer + playerChoice];
+    detailedMessageElement.innerText = `${dealer}${symbolNames[dealer]} ${outcome.action} ${outcome.defeated}`;
   }
 
   switch (winner) {
@@ -132,12 +144,11 @@ function endGame(winner) {
   gameInProgress = true; // Set this flag to true to lock out input.
   const messageElement = document.getElementById("result-message");
   messageElement.innerHTML = `${winner} wins the game! <br>  
-  <button id="exit">Exit</button> <button id="new-game">New Game</button>`;
-  document.getElementById("exit").addEventListener("click", function () {
-    // exit logic here
-    // Redirect to a different page or close the window/tab
-    // window.close();
-  });
+  <a href="https://github.com/CyberCygnus/lucky-lizard" target="_blank" rel="noopener noreferrer">
+    <button id="exit">Exit</button>
+  </a>
+  <button id="new-game">New Game</button>`;
+
   document.getElementById("new-game").addEventListener("click", function () {
     resetGame();
   });
