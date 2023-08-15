@@ -9,8 +9,10 @@ const gameRules = {
 let playerScore = 0;
 let dealerScore = 0;
 let gameInProgress = false;
+const detailedMessageElement = document.getElementById(
+  "detailed-result-message"
+);
 
-// Functions
 /**
    Generates a random choice for the dealer among the available game symbols.
    The symbol represents the dealer's choice.
@@ -21,7 +23,6 @@ function dealerChoice() {
   return choices[randomIndex];
 }
 
-// game logic
 /**
  * Determines the winner of the game round based on player and dealer choices.
  */
@@ -50,8 +51,7 @@ function playGame(playerChoice) {
   const dealerScoreElement = document.getElementById("dealer-score-value");
   const dealerChoiceSymbol = document.getElementById("dealer-choice-symbol");
 
-  dealerChoiceSymbol.innerText = dealer; // Show dealer's choice
-  // dealerChoiceSymbol.style.fontSize = "4em"; // Make the dealer's choice symbol four times bigger
+  dealerChoiceSymbol.innerText = dealer;
 
   // Change background color of dealer-choice-symbol div based on dealer's choice
   switch (dealer) {
@@ -71,6 +71,22 @@ function playGame(playerChoice) {
       dealerChoiceSymbol.style.backgroundColor = "#7d7507";
       break;
   }
+  const symbolNames = {
+    "🪨": "Rock",
+    "📃": "Paper",
+    "✂️": "Scissors",
+    "🦎": "Lizard",
+    "🖖": "Spock",
+  };
+
+  if (winner === "player") {
+    detailedMessageElement.innerText = `${playerChoice} ${symbolNames[playerChoice]} beats ${dealer} ${symbolNames[dealer]}`;
+  } else if (winner === "dealer") {
+    detailedMessageElement.innerText = `${dealer} ${symbolNames[dealer]} beats ${playerChoice} ${symbolNames[playerChoice]}`;
+  } else {
+    detailedMessageElement.innerText = ""; // Clear the detailed message on a draw
+  }
+
   switch (winner) {
     case "player":
       playerScore++;
@@ -95,6 +111,7 @@ function playGame(playerChoice) {
       endGame("Dealer");
     } else {
       dealerChoiceSymbol.innerText = "";
+      detailedMessageElement.innerText = "";
       dealerChoiceSymbol.style.backgroundColor = "transparent";
       messageElement.innerText = "Make your choice!";
     }
@@ -111,6 +128,7 @@ function playGame(playerChoice) {
  * and is passed as a parameter to this function.
  */
 function endGame(winner) {
+  detailedMessageElement.innerText = "";
   gameInProgress = true; // Set this flag to true to lock out input.
   const messageElement = document.getElementById("result-message");
   messageElement.innerHTML = `${winner} wins the game! <br>  
@@ -141,30 +159,31 @@ function resetGame() {
 
   const playerScoreElement = document.getElementById("player-score-value");
   const dealerScoreElement = document.getElementById("dealer-score-value");
-  const dealerChoiceSymbol = document.getElementById("dealer-choice-symbol"); // Get reference to dealer choice symbol
+  const dealerChoiceSymbol = document.getElementById("dealer-choice-symbol");
 
   playerScoreElement.innerText = playerScore;
   dealerScoreElement.innerText = dealerScore;
-
-  dealerChoiceSymbol.innerText = ""; // Clear the dealer's choice symbol
-  dealerChoiceSymbol.style.backgroundColor = "transparent"; // Reset background color
+  detailedMessageElement.innerText = "";
+  dealerChoiceSymbol.innerText = "";
+  dealerChoiceSymbol.style.backgroundColor = "transparent";
+  detailedMessageElement.innerText = "";
 
   document.getElementById("result-message").innerText = "Make your choice!";
 }
 
-/* Modal */
-var modal = document.getElementById("myModal"); // Get the modal
-var btn = document.getElementById("fixedButton"); // Get the button that opens the modal
-var span = document.getElementsByClassName("close")[0]; // Get the <span> element that closes the modal
-// When the user clicks on the button, open the modal
+/**
+ * Modal
+ * A popup-Window that displays the game's rules.
+ */
+var modal = document.getElementById("myModal");
+var btn = document.getElementById("fixedButton");
+var span = document.getElementsByClassName("close")[0];
 btn.onclick = function () {
   modal.style.display = "block";
 };
-// When the user clicks on <span> (x), close the modal
 span.onclick = function () {
   modal.style.display = "none";
 };
-// When the user clicks anywhere outside of the modal, close it
 window.onclick = function (event) {
   if (event.target == modal) {
     modal.style.display = "none";
