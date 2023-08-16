@@ -27,17 +27,19 @@ div {
   text-align: center;
   font-size: 0.8em;
   font-weight: bold;
-  letter-spacing: 4px;
+  letter-spacing: 3px;
+  overflow: visible;
 }
-
 #header h1 {
+  text-align: center;
   font-family: "Kaushan Script", cursive;
-  font-size: 3em;
+  font-size: 2em;
   font-weight: bold;
-  margin-bottom: 10px;
-  letter-spacing: 6px; /* Slight spacing between letters in "Lucky Lizard" */
+  letter-spacing: 5px;
 }
-
+#header p {
+  margin-top: 5px;
+}
 /* Dealer Area */
 .dealer {
   background-color: #014143;
@@ -215,17 +217,16 @@ div {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  z-index: 10;
+  z-index: 100;
   font-size: 1.5em;
   font-weight: bold;
   text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.76); /* Added drop-shadow like the symbols */
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.76); /* Added shadow for 3D effect */
   transition: transform 0.2s, box-shadow 0.2s; /* Smooth transition for 3D effect on hover */
-
-  #fixedButton:hover {
-    transform: translateY(-2px);
-    box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.76);
-  }
+}
+#fixedButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 5px 5px 7px rgba(0, 0, 0, 0.76);
 }
 .modal {
   display: none;
@@ -243,14 +244,10 @@ div {
   background-color: rgba(0, 0, 0, 0.4);
 }
 .close {
-  color: #aaa;
+  color: #000000;
   float: right;
   font-size: 28px;
   font-weight: bold;
-}
-.close:hover,
-.close:focus {
-  color: black;
   cursor: pointer;
 }
 /* Modal Content*/
@@ -281,7 +278,7 @@ footer a:visited {
   color: #228b74;
 }
 /* Media query for screens wider than 590px */
-@media (min-width: 600px) {
+@media (min-width: 590px) {
   #fixedButton {
     right: calc((100% - 590px) / 2);
   }
