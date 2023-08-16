@@ -1,39 +1,41 @@
-Lucky Lizard
-
-The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissors game, with the addition of two more choices: Lizard and Spock (represented by emojis).
-
 (#table-of-content)
 
-- [Features](#features)
-  - [Existing Features](#existing-features)
-    - [Logo](#logo)
-    - [Interactive Gameplay](#interactive-gameplay)
-    - [Dealer's Choice Highlight](#dealers-choice-highlight)
-    - [Dynamic Feedback](#dynamic-feedback)
-    - [Detailed Game Outcomes](#detailed-game-outcomes)
-    - [End of Game Logic \& Reset](#end-of-game-logic--reset)
-    - [Modal Window with Game Rules](#modal-window-with-game-rules)
-    - [Responsive Design](#responsive-design)
-  - [Features Left to Implement](#features-left-to-implement)
-- [Testing](#testing)
-  - [Validator Testing](#validator-testing)
-  - [Unfixed Bugs](#unfixed-bugs)
-- [Deployment](#deployment)
-- [Code Explanations](#code-explanations)
-  - [CSS Flex Property in `.choice`](#css-flex-property-in-choice)
-  - [JavaScript](#javascript)
-    - [`dealerChoice()`](#dealerchoice)
-    - [Determining the Winner](#determining-the-winner)
-    - [Main Game Logic](#main-game-logic)
-    - [Game Flow](#game-flow)
-    - [Detailed Game Outcomes Message:](#detailed-game-outcomes-message)
-    - [End of Game Logic \& UI](#end-of-game-logic--ui)
-    - [Introduced game reset functionality](#introduced-game-reset-functionality)
-    - [Modal Window Implementation](#modal-window-implementation)
-    - [Event Handlers](#event-handlers)
-- [Credits](#credits)
-  - [Code Snippets and Inspiration](#code-snippets-and-inspiration)
-  - [Media](#media)
+- [Lucky Lizard](#lucky-lizard)
+  - [Features](#features)
+    - [Existing Features](#existing-features)
+      - [Logo](#logo)
+      - [Interactive Gameplay](#interactive-gameplay)
+      - [Dealer's Choice Highlight](#dealers-choice-highlight)
+      - [Dynamic Feedback](#dynamic-feedback)
+      - [Detailed Game Outcomes](#detailed-game-outcomes)
+      - [Scoreboard](#scoreboard)
+      - [End of Game Logic \& Reset](#end-of-game-logic--reset)
+      - [Modal Window with Game Rules](#modal-window-with-game-rules)
+      - [Responsive Design](#responsive-design)
+    - [Features Left to Implement](#features-left-to-implement)
+  - [Testing](#testing)
+    - [Validator Testing](#validator-testing)
+    - [Unfixed Bugs](#unfixed-bugs)
+  - [Deployment](#deployment)
+  - [Code Explanations](#code-explanations)
+    - [CSS Flex Property in `.choice`](#css-flex-property-in-choice)
+    - [JavaScript](#javascript)
+      - [`dealerChoice()`](#dealerchoice)
+      - [Determining the Winner](#determining-the-winner)
+      - [Main Game Logic](#main-game-logic)
+      - [Game Flow](#game-flow)
+      - [Detailed Game Outcomes Message:](#detailed-game-outcomes-message)
+      - [End of Game Logic \& UI](#end-of-game-logic--ui)
+      - [Introduced game reset functionality](#introduced-game-reset-functionality)
+      - [Modal Window Implementation](#modal-window-implementation)
+      - [Event Handlers](#event-handlers)
+  - [Credits](#credits)
+    - [Code Snippets and Inspiration](#code-snippets-and-inspiration)
+    - [Media](#media)
+
+# Lucky Lizard
+
+The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissors game, with the addition of two more choices: Lizard and Spock (represented by emojis). Drawing inspiration from popular culture, this game variation promises an engaging and unpredictable experience, ensuring that each round is as thrilling as the last.
 
 ## Features
 
@@ -41,11 +43,14 @@ The Lucky Lizard game is a fun variation of the traditional Rock, Paper, Scissor
 
 #### Logo
 
-A friendly smiling cartoon lizard representing the dealer.
+<p align="center">
+  <img src="./assets/docs/lizard.png" alt="Lucky Lizard Logo" width="100" height="100">
+</p>
+A captivating logo featuring a friendly, smiling cartoon lizard, which serves as the game's mascot and represents the dealer.
 
 #### Interactive Gameplay
 
-Players engage in rounds of extended Rock, Paper, Scissors, Lizard, Spock by clicking on symbols. Clear visual and textual feedback is provided for each round's outcome.
+Engage in thrilling rounds of the expanded Rock, Paper, Scissors, Lizard, Spock game. Players make their choices by clicking on intuitive emoji symbols, with each round offering clear visual and textual feedback on the outcome.
 
 #### Dealer's Choice Highlight
 
@@ -53,19 +58,23 @@ The dealer's symbol choice is visually represented, with a unique background col
 
 #### Dynamic Feedback
 
-Real-time feedback is provided through the main message field, indicating round winners and the overall game outcome.
+Real-time feedback is provided through the message field, indicating round winners and the overall game outcome.
 
 #### Detailed Game Outcomes
 
 Each round displays a detailed message explaining the interaction between the player's and dealer's choices, enhancing understanding of game mechanics.
 
+#### Scoreboard
+
+The game displays a real-time scoreboard, reflecting the current scores of both the player and the dealer. This dynamic element updates immediately after each round, providing a visual representation of the game's status and allowing players to track their progress and performance.
+
 #### End of Game Logic & Reset
 
-The game detects when a player or dealer reaches a score threshold, concluding the game. Players are then presented with options to start a new game or exit.
+The game detects when a player or dealer reaches a score threshold, concluding the game. Players are then presented with options to start a new game.
 
 #### Modal Window with Game Rules
 
-A modal window, accessible via a button, offers players a comprehensive overview of the game's rules, ensuring clarity.
+A modal window, accessible via a button, offers players a comprehensive overview of the game's rules, ensuring clarity. And image (svg) is added that depicts what entity wins over the other.
 
 #### Responsive Design
 
@@ -73,11 +82,12 @@ The game interface is adaptive to various screen sizes, ensuring a consistent ex
 
 ### Features Left to Implement
 
-- **Inactive Player Choice Buttons**: Player choice buttons behave like radiobuttons, unchosen ones are darkened.
-- **Light Effects for Buttons**: Winning symbol is displayed with a lighter color or other visual effects.
-- **Audio-Effects**: Enhance gameplay with sound effects.
-- **Betting Mechanism**: Players can place bets on game outcomes.
-- **TRNG Implementation**: Enhancing game randomness by integrating a True Random Number Generator.
+- **Inactive Player Choice Buttons**: Make unchosen player buttons look inactive, similar to radio buttons.
+- **Light Effects for Buttons**: Add a light effect to the winning symbol for a better visual experience.
+- **Audio-Effects**: Add sound effects for moves, wins, and draws.
+- **Betting Mechanism**: Let players bet on game outcomes for added excitement.
+- **TRNG Implementation**: Use a True Random Number Generator for fairer gameplay.
+- **Verification**: Add a system based on cryptography and timestamps to show the game is fair and the computer isn't biased.
 
 ## Testing
 
