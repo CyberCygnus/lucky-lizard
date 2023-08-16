@@ -117,9 +117,9 @@ function playGame(playerChoice) {
 
   setTimeout(() => {
     gameInProgress = false; // <-- Mark the end of a game round
-    if (playerScore >= 10) {
-      endGame("Player");
-    } else if (dealerScore >= 10) {
+    if (playerScore >= 3) {
+      endGame("Player"); // <-- Mark the end of the game
+    } else if (dealerScore >= 3) {
       endGame("Dealer");
     } else {
       dealerChoiceSymbol.innerText = "";
@@ -143,11 +143,13 @@ function endGame(winner) {
   detailedMessageElement.innerText = "";
   gameInProgress = true; // Set this flag to true to lock out input.
   const messageElement = document.getElementById("result-message");
-  messageElement.innerHTML = `${winner} wins the game! <br>  
+  messageElement.innerHTML = `${winner} wins the game! <br> 
+  
+  <button id="new-game">New Game</button>
+
   <a href="https://github.com/CyberCygnus/lucky-lizard" target="_blank" rel="noopener noreferrer">
     <button id="exit">Exit</button>
-  </a>
-  <button id="new-game">New Game</button>`;
+  </a>`;
 
   document.getElementById("new-game").addEventListener("click", function () {
     resetGame();
@@ -183,8 +185,7 @@ function resetGame() {
 }
 
 /**
- * Modal
- * A popup-Window that displays the game's rules.
+ * Modal with the game's rules.
  */
 var modal = document.getElementById("myModal");
 var btn = document.getElementById("fixedButton");
