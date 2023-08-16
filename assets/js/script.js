@@ -145,11 +145,7 @@ function endGame(winner) {
   const messageElement = document.getElementById("result-message");
   messageElement.innerHTML = `${winner} wins the game! <br> 
   
-  <button id="new-game">New Game</button>
-
-  <a href="https://github.com/CyberCygnus/lucky-lizard" target="_blank" rel="noopener noreferrer">
-    <button id="exit">Exit</button>
-  </a>`;
+  <button id="new-game">New Game</button> <a href="https://github.com/CyberCygnus/lucky-lizard" target="_blank" rel="noopener noreferrer"></a>`;
 
   document.getElementById("new-game").addEventListener("click", function () {
     resetGame();
