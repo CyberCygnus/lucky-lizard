@@ -7,7 +7,7 @@
 }
 body {
   font-family: "Arial", sans-serif;
-  background-color: #228b74;
+  background-color: #014143;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,7 +29,7 @@ div {
 }
 /* Dealer Area */
 .dealer {
-  background-color: #228b74;
+  background-color: #014143;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -110,12 +110,12 @@ div {
   box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.76);
 }
 #message #new-game {
-  background-color: #228b74; /* Same color as the '?'-btn */
+  background-color: #228b74;
   color: #fff;
   margin-right: 10px; /* Spacing between the buttons */
 }
 #message #exit {
-  background-color: #901002; /* Unique color for the 'Exit' button */
+  background-color: #901002;
   color: #fff;
 }
 /* Detailed Result Message */
@@ -125,12 +125,31 @@ div {
   font-size: 1.2em;
   font-weight: bold;
   color: #02eef6;
-  margin-top: 10px;
+  margin-top: -9px;
   height: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
   border: 1px solid transparent;
+}
+#scoreboard {
+  background-color: #014143;
+  text-align: center;
+  font-size: 1em;
+  font-weight: bold;
+  color: #02eef6;
+  padding: 10px 0;
+}
+.score-value {
+  background-color: #01282a; /* Darker background for the score values */
+  padding: 5px 15px;
+  margin: 0 10px;
+  font-size: 1.5em;
+  color: #ffffff;
+  border-radius: 5px;
+}
+.score-separator {
+  margin: 0 5px; /* Adjust as needed */
 }
 /* Player Area */
 #player-score {

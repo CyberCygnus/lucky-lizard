@@ -127,7 +127,7 @@ function playGame(playerChoice) {
       dealerChoiceSymbol.style.backgroundColor = "transparent";
       messageElement.innerText = "Make your choice!";
     }
-  }, 1000);
+  }, 2500);
 }
 
 /**
