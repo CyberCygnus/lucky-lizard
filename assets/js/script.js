@@ -117,9 +117,9 @@ function playGame(playerChoice) {
 
   setTimeout(() => {
     gameInProgress = false; // <-- Mark the end of a game round
-    if (playerScore >= 3) {
+    if (playerScore >= 5) {
       endGame("Player"); // <-- Mark the end of the game
-    } else if (dealerScore >= 3) {
+    } else if (dealerScore >= 5) {
       endGame("Dealer");
     } else {
       dealerChoiceSymbol.innerText = "";
